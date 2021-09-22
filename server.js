@@ -22,7 +22,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors( 
   origin: '*',
-  "Access-Control-Allow-Origin": "*",
+  Access-Control-Allow-Origin: "*",
   credentials:true
   ));
 app.options('/*', (_, res) => {
