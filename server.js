@@ -25,7 +25,9 @@ app.use(cors(
   "Access-Control-Allow-Origin": "*",
   credentials:true
   ));
-
+app.options('/*', (_, res) => {
+    res.sendStatus(200);
+});
 app.get('/', (req,res) => {res.send('it is working')})
 app.post('/signin', (req, res) => { handleSignin(req, res, db, bcrypt) })
 app.post('/register', (req, res) => { handleRegister(req, res, db, bcrypt) })
